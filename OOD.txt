@@ -1,0 +1,51 @@
+///PROJECT #3////
+///Xinxin Chen///
+//11/08/2016/////
+
+The Personnel Database
+A program named Personnel that maintains wage information for teh the employees of a company.
+Personneel class(main):
+{
+	@main method: creat a new arraylist called records and displaymenu, a switch statement for user enter command to select the menu bar, a while loop helps the program keeps running until the user hit "q" for exiting the program,the program will return Error message if the user enter a invaild command, the switch statement will lead the user to experiening different function of this program
+	@displayMenu method that print out the menu selection bar
+	@isInputVaild method that takes in a string and check if the input is vaild or not,the method will return a Error message if the user input is not vaild 
+	@newEmoloyee method that takes in a Arraylist and using a scanner to let the user enter the information for their new emoloyee, they would also allowed to set their employee to a hourlyemployee or a salariedemployee, the system will takes the input and store the input to the records Arraylist. If the the user enter an invaild input the method will return a Error message and back to the method selection bar
+	@computePaychecks method that takes in an Arraylist and compute the paycheck individually base on the the hours inputed by the user,and return the result of the pay amount,the method will return a Error message if the user enter an invaild input
+	@raiseWages method the takes in an Arraylist and let the user enter the percentage and print out all the new wage of the employees,an instanceof will be need to distinguish the hourlyemployee and salariedemployee,the method will return Error message if the userenter any invaild input
+	@printRecords method the takes in an Arraylist and print out all the employee's name and wages
+	@downloadData method the takes in an Arraylist and download the arraylist to a file named employee.dat
+	@uploadData method the takes in an Arraylist and able to upload the arraylist in the employee.dat to the program
+}
+Employee class:
+//is an abstract super class that will store an employee name as a String and the employee's hourly wage as a double vaule.
+{
+	@Employee constructor that store employee name and hourly wage
+	@computePay method that is an abstract method with no body
+	@setEmployeeName method that is a setter for user to set a emoployee name as a string parameter
+	@setHourlyWage method that is a setter for user to set employee's hourlywage as a double parameter
+	@getEmployeeName method is a getter that return the employee name as a String
+	@getHourlyWage method is a getter that return the employee's Hourlywage as a double 
+	@rasieWage method that can raise the hourlywage by pass a double precentage value as parameter 
+}
+
+HourlyEmployee class:
+//is a subclass that extends Employee, takes a name and hourlywage 
+{
+	@HourlyEmployee constuctor that store emoployee name and hourly wage by using the Employee class constructor
+	@computPay method override the Employee class's computPay method by calculating employee's pay regards to the hours parameter, after the first 40 hours the employee will be paid at time and a half, the method returns a double weeklyPay value
+	@toString method that returns a string containing the employee's name and hourly wage, the entire string will be 40 characters long
+	@toDollars method that return all the double values to two decimal places
+}
+
+SalariedEmployee class:
+//a subclass that extends Employee and takes a name and annual wage
+{
+	@SalariedEmployee constuctor that store emoployee name and annual wage by using the Employee class constructor
+	@getAnnualSalary method that is a getter that return the annualSalary
+	@setAnnualSalary method that is a setter that set the employee's annual salary by passing in a double value
+	@computPay method override the Employee class's computPay method by calculating employee's pay regardless to the hours parameter, the method returns a double value that is 1/52 of the annual salary
+	@toString method that returns a string containing the employee's name and annual wage, the entire string will be 40 characters long
+	@toDollars method that return all the double values to two decimal places
+}
+/
+	 
